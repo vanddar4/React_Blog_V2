@@ -1,9 +1,12 @@
-import React from "react"
+import React from "react";
+import {Link} from "react-router-dom";
 
 const Header = props => (
   <header className="App-Header">
     <ul className="container">
-      <h1>Vanddar4 Blog!</h1>
+      <li key="home">
+        <Link to="/">Vanddar4 Blog!</Link>
+      </li>
     </ul>
   </header>
 );

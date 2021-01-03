@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Posts = ({ posts }) => (
   <article className="posts container">
@@ -9,7 +10,9 @@ const Posts = ({ posts }) => (
         )}
         {posts.map(posts => (
           <li key={posts.id}>
-            <h2>{posts.title}</h2>
+            <h2>
+              <Link to={`/post/${posts.slug}`}>{posts.title}</Link>
+            </h2>
           </li>
         ))}
       </ul>
