@@ -27,11 +27,9 @@ const App = (props) => {
 
   const addNewPost = (post) => {
     post.id = posts.length + 1;
-    post.slug = encodeURIComponent(
-      post.title.toLowerCase().split(" ").join("-")
-    );
+    post.slug = getNewSlugFromTitle(post.title)
     setPosts([...posts, post])
-    setMessage(`saved`);
+    setFlashMessage(`saved`);
   };
 
   const updatePost = (post) => {
@@ -43,13 +41,21 @@ const App = (props) => {
     setFlashMessage(`updated`);
   }  
 
+  const deletePost = (post) => {
+    if(window.confirm("Delete post?")){
+      const updatedPosts =posts.filter((p)=> p.id !==post.id);
+      setPosts(updatedPosts);
+      setFlashMessage(`deleted`);
+    }
+  };
+
   return (
     <Router>
       <div className="App">
         <Header />
         {message && <Message type={message} />}
         <Switch>
-          <Route exact path="/" render={() => <Posts posts={posts} />} />
+          <Route exact path="/" render={() => <Posts posts={posts} deletePost={deletePost} />} />
           <Route
             path="/post/:postSlug"
               render={(props) => {

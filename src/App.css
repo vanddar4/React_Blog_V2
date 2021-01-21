@@ -118,6 +118,7 @@
   }
 
 .App button.linkLike {
+  background:inherit;
   border: none;
   font-size: inherit;
   color: #26738D;
