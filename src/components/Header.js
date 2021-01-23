@@ -1,11 +1,11 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Header = props => (
-  <header className="App-Header">
+const Header = (props) => (
+  <header className="App-header">
     <ul className="container">
-      <li key="home">
-        <Link to="/">Vanddar4 Blog!</Link>
+      <li>
+        <Link to="/">Vanddar Blog!</Link>
       </li>
       <li>
         <Link to="/new">New Post</Link>

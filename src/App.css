@@ -1,3 +1,4 @@
+.App {}
 
   .App a {
     color: #26738D;
@@ -120,11 +121,11 @@
 .App button.linkLike {
   background:inherit;
   border: none;
-  font-size: inherit;
   color: #26738D;
+  font-size: inherit;
   text-decoration: underline;  
 }
 
-  .App button.linkLike:hover {
-     cursor: pointer;
-  }
+.App button.linkLike:hover {
+    cursor: pointer;
+}

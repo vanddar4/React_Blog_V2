@@ -2,8 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { Redirect } from "react-router-dom";
 import Quill from "react-quill";
 
-import 'react-quill/dist/quill.snow.css';
-
 const PostForm = ({ post: propsPost, addNewPost, updatePost}) => {
   const [post, setPost] = useState({...propsPost});
   // const [title, setTitle] = useState("");
