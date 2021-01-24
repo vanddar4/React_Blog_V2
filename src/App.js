@@ -5,6 +5,8 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+//import SimpleStorage from "react-simple-storage";
+import { useStorageState } from "react-storage-hooks";
 import Header from "./components/Header";
 import Message from "./components/Message";
 import Posts from "./components/Posts";
@@ -52,9 +54,11 @@ const App = (props) => {
     }
   };
 
+  //<SimpleStorage parent={this} />
   return (
     <Router>
       <div className="App">
+       
         <Header />
         {message && <Message type={message} />}
         <Switch>
